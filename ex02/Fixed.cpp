@@ -9,8 +9,7 @@ Fixed::Fixed(const int n){
 }
 
 Fixed::Fixed(const float f){
-  float scaled = f * (1 << fractionalbits);
-  raw =  (int)(scaled + (scaled >= 0.0f ? 0.5f : -0.5f));
+  raw = roundf(f * (1 << fractionalbits));
 }
 
 Fixed::Fixed(const Fixed& other){
