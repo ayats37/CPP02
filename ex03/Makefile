@@ -1,4 +1,4 @@
-NAME = a.out
+NAME = bsp
 SRC = Fixed.cpp  main.cpp Point.cpp bsp.cpp
 OBJ = $(SRC:.cpp=.o)
 CPPC = c++
