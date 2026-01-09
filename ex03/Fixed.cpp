@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Fixed.cpp                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: taya <taya@student.42.fr>                  +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/01/09 00:57:38 by taya              #+#    #+#             */
+/*   Updated: 2026/01/09 01:16:35 by taya             ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Fixed.hpp"
 #include <iostream>
 
@@ -9,7 +21,7 @@ Fixed::Fixed(const int n){
 }
 
 Fixed::Fixed(const float f){
-    raw = roundf(f * (1 << fractionalbits));
+    raw = (int)roundf(f * (1 << fractionalbits));
 }
 
 Fixed::Fixed(const Fixed& other){
@@ -71,7 +83,7 @@ bool Fixed::operator!=(const Fixed& other)const{
 
 Fixed Fixed::operator+(const Fixed& other) const{
   Fixed add;
-  add.raw = raw - other.raw;
+  add.raw = raw + other.raw;
   return add;
 }
 

@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Fixed.cpp                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: taya <taya@student.42.fr>                  +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/01/09 00:57:11 by taya              #+#    #+#             */
+/*   Updated: 2026/01/09 01:27:05 by taya             ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Fixed.hpp"
 #include <iostream>
 
@@ -12,7 +24,7 @@ Fixed::Fixed(const int n){
 
 Fixed::Fixed(const float f){
   std::cout << "Float constructor called" << std::endl;
-  raw = roundf(f * (1 << fractionalbits));
+  raw = (int)roundf(f * (1 << fractionalbits));
 }
 
 Fixed::Fixed(const Fixed& other){
